@@ -3,165 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yue Liao | Personal Academic Page</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+    <title>Yue Liao | Academic Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #34495e;
+            --bg-light: #f9f9f9;
+            --shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
 
         body {
-            background-color: #f7f7f7;
-            color: #333;
+            font-family: 'Lato', sans-serif;
             line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
             padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        a {
-            color: #1772d0;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #f09228;
+            background-color: white;
         }
 
         .container {
-            background-color: #fff;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .header {
             display: flex;
             flex-wrap: wrap;
+            gap: 30px;
             align-items: center;
-            justify-content: flex-start;
-            gap: 40px;
-            margin-bottom: 40px;
+            padding: 40px 0;
+            border-bottom: 2px solid #eee;
         }
 
-        .profile-image {
-            width: 150px;
-            height: 150px;
+        .profile-img {
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            overflow: hidden;
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
+            box-shadow: var(--shadow);
         }
 
         .name {
-            font-size: 30px;
-            margin-bottom: 10px;
+            font-size: 2.5em;
+            margin: 0;
+            color: var(--primary-color);
         }
 
-        .position {
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
+        .contact-links {
+            margin-top: 15px;
             display: flex;
             gap: 20px;
-            color: #666;
+            flex-wrap: wrap;
         }
 
-        .news-section,
-        .publications-section,
-        .services-section,
-        .awards-section,
-        .interests-section {
-            margin-top: 40px;
+        .contact-links a {
+            color: var(--secondary-color);
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .section {
+            margin: 40px 0;
             padding: 30px;
-            background-color: #f5f5f5;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
         }
 
-        .section-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #2c3e50;
+        .section-heading {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 15px;
+            margin: 0 0 25px 0;
         }
 
-        .news-item,
-        .publication-item {
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #ddd;
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 15px;
-            align-items: center;
+        .news-list {
+            list-style: none;
+            padding: 0;
         }
 
-        .news-item:last-child,
-        .publication-item:last-child {
-            border-bottom: none;
+        .news-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: baseline;
         }
 
         .news-date {
-            font-size: 14px;
+            color: var(--accent-color);
+            min-width: 100px;
+            font-weight: 700;
+        }
+
+        .publication {
+            padding: 20px;
+            margin: 15px 0;
+            background: var(--bg-light);
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .publication:hover {
+            transform: translateY(-3px);
+        }
+
+        .pub-title {
+            font-size: 1.1em;
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+        }
+
+        .pub-authors {
             color: #666;
-            font-weight: bold;
-            width: 100px;
+            margin: 5px 0;
         }
 
-        .news-content {
-            font-size: 16px;
+        .pub-venue {
+            color: var(--secondary-color);
+            font-weight: 700;
         }
 
-        .publication-title {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .publication-authors {
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .publication-actions {
-            display: flex;
-            gap: 10px;
+        .pub-links {
             margin-top: 10px;
         }
 
-        .publication-actions a {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .pub-links a {
+            margin-right: 15px;
+            color: var(--accent-color);
+            text-decoration: none;
         }
 
-        @media screen and (max-width: 768px) {
+        .list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
             .header {
-                flex-wrap: wrap;
+                flex-direction: column;
+                text-align: center;
             }
-
-            .profile-image {
-                width: 100px;
-                height: 100px;
-                margin-bottom: 20px;
+            
+            .contact-links {
+                justify-content: center;
             }
-
-            .contact-info a {
-                font-size: 14px;
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .news-date {
+                min-width: 80px;
             }
         }
     </style>
@@ -169,391 +175,323 @@
 <body>
     <div class="container">
         <header class="header">
-            <div class="avatar">
-                <div class="profile-image">
-                    <img src="images/liaoyue.jpg" alt="Yue Liao">
+            <div class="header-text">
+                <h1 class="name">Yue Liao <span style="font-family: 'KaiTi', sans-serif; font-size: 0.8em;">廖越</span></h1>
+                <p>Post-Doctoral Fellow, MMLab<br>The Chinese University of Hong Kong</p>
+                <div class="contact-links">
+                    <a href="mailto:liaoyue.ai@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://scholar.google.com/citations?user=mIt-3fEAAAAJ&hl=en"><i class="fas fa-graduation-cap"></i> Scholar</a>
+                    <a href="https://github.com/YueLiao"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
-            <div class="profile-info">
-                <div class="name">YUE LIAO 廖越</div>
-                <div class="position">Post-doctoral fellow at MMLab, CUHK</div>
-                <div class="contact-info">
-                    <a href="mailto:liaoyue.ai@gmail.com">Email</a>
-                    <a href="https://scholar.google.com/citations?user=mIt-3fEAAAAJ&hl=en">Google Scholar</a>
-                    <a href="https://github.com/YueLiao">GitHub</a>
-                </div>
-            </div>
+            <img src="images/liaoyue.jpg" alt="Yue Liao" class="profile-img">
         </header>
-        <section class="news-section">
-            <div class="section-title">News</div>
-            <div class="news-items">
-                <div class="news-item">
-                    <div class="news-date">2025/01</div>
-                    <div class="news-content">
-                        Three papers are accepted in <strong>ICLR 2025</strong>.
-                    </div>
+
+        <section class="section">
+            <h2 class="section-heading">Research Interests</h2>
+            <p>Computer Vision, Deep Learning, Vision and Language</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-heading">Latest News</h2>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-date">2025/01</span>
+                    <span>Three papers accepted to ICLR 2025</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2022/06</span>
+                    <span>Visual Grounding paper accepted to TIP</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2022/03</span>
+                    <span>HOI Detection paper accepted to CVPR 2022</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2021/09</span>
+                    <span>HOI Detection paper accepted to NeurIPS 2021</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2021/06</span>
+                    <span>1st in CVPR2021 ActivityNet Homage challenge</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2021/03</span>
+                    <span>HOI Detection paper accepted to CVPR 2021</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2021/02</span>
+                    <span>PIC Workshop at CVPR 2021</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2020/02</span>
+                    <span>Three papers accepted to CVPR 2020</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2019/10</span>
+                    <span>Co-organizer of PIC Workshop at ICCV 2019</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2018/09</span>
+                    <span>Co-organizer of PIC Workshop at ECCV 2018</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-heading">Publications</h2>
+            <div class="publication">
+                <h3 class="pub-title">LLaVA-MoD: Making LLaVA Tiny via MoE Knowledge Distillation</h3>
+                <p class="pub-authors">Fangxun Shu, Yue Liao, Le Zhuo, Chenning Xu, Lei Zhang, Guanghao Zhang, et al.</p>
+                <p class="pub-venue">ICLR 2025</p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2408.15881"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/shufangxun/LLaVA-MoD"><i class="fas fa-code"></i> Code</a>
                 </div>
-                <div class="news-item">
-                    <div class="news-date">2022/06</div>
-                    <div class="news-content">
-                        One paper for Visual Grounding is accepted in <strong>TIP</strong>.
-                    </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">MC-MoE: Mixture Compressor for Mixture-of-Experts LLMs Gains More</h3>
+                <p class="pub-authors">Wei Huang, Yue Liao, Jianhui Liu, Ruifei He, Haoru Tan, Shiming Zhang, et al.</p>
+                <p class="pub-venue">ICLR 2025</p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2410.06270"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/Aaronhuang-778/Mixture-Compressor-MoE"><i class="fas fa-code"></i> Code</a>
                 </div>
-                <div class="news-item">
-                    <div class="news-date">2022/03</div>
-                    <div class="news-content">
-                        One paper for HOI Detection is accepted in <strong>CVPR 2022</strong>.
-                    </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Towards Realistic UAV Vision-Language Navigation: Platform, Benchmark, and Methodology</h3>
+                <p class="pub-authors">Xiangyu Wang, Donglin Yang, Ziqin Wang, Hohin Kwan, Jinyu Chen, Wenjun Wu, et al.</p>
+                <p class="pub-venue">ICLR 2025</p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2410.07087"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://prince687028.github.io/OpenUAV"><i class="fas fa-code"></i> Code</a>
                 </div>
-                <div class="news-item">
-                    <div class="news-date">2021/09</div>
-                    <div class="news-content">
-                        One paper for HOI Detection is accepted in <strong>NeurIPS 2021</strong>.
-                    </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Anchor3DLane++: 3D Lane Detection via Sample-Adaptive Sparse 3D Anchor Regression</h3>
+                <p class="pub-authors">Shaofei Huang, Zhenwei Shen, Zehao Huang, Yue Liao, etc.</p>
+                <p class="pub-venue">IEEE TPAMI 2025</p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2412.16889"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/tusen-ai/Anchor3DLane"><i class="fas fa-code"></i> Code</a>
                 </div>
-                <div class="news-item">
-                    <div class="news-date">2021/06</div>
-                    <div class="news-content">
-                        We are 1st in CVPR2021 <a href="https://homeactiongenome.org/competition.html#competition">ActivityNet Home Action Gennome (HOMAGE) Challenge: Scene-graph Detection Track</a>.
-                    </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">LaMI-DETR: Open-Vocabulary Detection with Language Model Instruction</h3>
+                <p class="pub-authors">Penghui Du, Yu Wang, Yifan Sun, Luting Wang, Yue Liao, etc.</p>
+                <p class="pub-venue">ECCV 2024</p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2407.11335"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/eternaldolphin/LaMI-DETR"><i class="fas fa-code"></i> Code</a>
                 </div>
-                <div class="news-item">
-                    <div class="news-date">2021/03</div>
-                    <div class="news-content">
-                        One paper for HOI Detection is accepted in <strong>CVPR 2021</strong>.
-                    </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Mask-Enhanced Segment Anything Model for Tumor Lesion Semantic Segmentation</h3>
+                <p class="pub-authors">Hairong Shi, Songhao Han, Shaofei Huang, Yue Liao, etc.</p>
+                <p class="pub-venue">MICCAI 2024</p>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1007/978-3-031-72111-3_38"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/nanase1025/M-SAM"><i class="fas fa-code"></i> Code</a>
                 </div>
-                <div class="news-item">
-                    <div class="news-date">2021/02</div>
-                    <div class="news-content">
-                        The 3rd Person in Context (<a href="http://picdataset.com/2021/index/">PIC</a>) Workshop and Challenge will be held at CVPR 2021.
-                    </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">PPDM++: Parallel Point Detection and Matching for Fast and Accurate HOI Detection</h3>
+                <p class="pub-authors">Yue Liao, Si Liu, Yulu Gao, Aixi Zhang, etc.</p>
+                <p class="pub-venue">IEEE TPAMI 2024</p>
+                <div class="pub-links">
+                    <a href="https://colalab.net/media/paper/PAMI_PPDM_final.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/YueLiao/PPDM"><i class="fas fa-code"></i> Code</a>
                 </div>
-                <div class="news-item">
-                    <div class="news-date">2020/02</div>
-                    <div class="news-content">
-                        Three papers are accepted in <strong>CVPR 2020</strong>.
-                    </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">MAC: Masked Contrastive Pre-Training for Efficient Video-Text Retrieval</h3>
+                <p class="pub-authors">Fangxun Shu, Biaolong Chen, Yue Liao, Jinqiao Wang, etc.</p>
+                <p class="pub-venue">IEEE TMM 2024</p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2212.00986"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
-                <div class="news-item">
-                    <div class="news-date">2019/10</div>
-                    <div class="news-content">
-                        I am co-organizing the 2nd Person in Context (<a href="http://picdataset.com/challenge/index/">PIC</a>) Workshop and Challenge at ICCV2019.
-                    </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">DiffDance: Cascaded Human Motion Diffusion Model for Dance Generation</h3>
+                <p class="pub-authors">Qiaosong Qi, Le Zhuo, Aixi Zhang, Yue Liao, etc.</p>
+                <p class="pub-venue">ACM MM 2023</p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2308.02915"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
-                <div class="news-item">
-                    <div class="news-date">2018/09</div>
-                    <div class="news-content">
-                        I am a co-organizer of the Person in Context (<a href="http://picdataset.com/">PIC</a>) Workshop at ECCV2018.
-                    </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Video Background Music Generation: Dataset, Method and Evaluation</h3>
+                <p class="pub-authors">Le Zhuo, Zhaokai Wang, Yue Liao, etc.</p>
+                <p class="pub-venue">ICCV 2023</p>
+                <div class="pub-links">
+                    <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Zhuo_Video_Background_Music_Generation_Dataset_Method_and_Evaluation_ICCV_2023_paper.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/zhuole1025/SymMV"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Object-Aware Distillation Pyramid for Open-Vocabulary Object Detection</h3>
+                <p class="pub-authors">Luting Wang, Yi Liu, Yue Liao, etc.</p>
+                <p class="pub-venue">CVPR 2023</p>
+                <div class="pub-links">
+                    <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Object-Aware_Distillation_Pyramid_for_Open-Vocabulary_Object_Detection_CVPR_2023_paper.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/LutingWang/OADP"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Simultaneously Training and Compressing Vision-and-Language Pre-Training Model</h3>
+                <p class="pub-authors">Qiaosong Qi, Aixi Zhang, Yue Liao, etc.</p>
+                <p class="pub-venue">IEEE TMM 2023</p>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1109/TMM.2022.3233258"><i class="fas fa-file-pdf"></i> Paper</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">HEAD: Hetero-Assists Distillation for Heterogeneous Object Detectors</h3>
+                <p class="pub-authors">Luting Wang, Xiaojie Li, Yue Liao, etc.</p>
+                <p class="pub-venue">ECCV 2022</p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2207.05345"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/LutingWang/HEAD"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">GEN-VLKT: Simplify Association and Enhance Interaction Understanding for HOI Detection</h3>
+                <p class="pub-authors">Yue Liao, Aixi Zhang, Miao Lu, etc.</p>
+                <p class="pub-venue">CVPR 2022</p>
+                <div class="pub-links">
+                    <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Liao_GEN-VLKT_Simplify_Association_and_Enhance_Interaction_Understanding_for_HOI_Detection_CVPR_2022_paper.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/YueLiao/gen-vlkt"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Human-Centric Relation Segmentation: Dataset and Solution</h3>
+                <p class="pub-authors">Si Liu, Zitian Wang, Yue Liao, etc.</p>
+                <p class="pub-venue">IEEE TPAMI 2022</p>
+                <div class="pub-links">
+                    <a href="https://colalab.net/media/paper/Human-centric_Relation_Segmentation_Dataset_and_Solution_jBmLebt.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://intxyz-my.sharepoint.com/:f:/g/personal/zongheng_picdataset_com/Eqmkhfe9qHxHoFCoXxAxYpYBe6aiztxvPQXuj3j9DWkkrg?e=9LGt5s"><i class="fas fa-cloud"></i> Dataset</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Mining the Benefits of Two-stage and One-stage HOI Detection</h3>
+                <p class="pub-authors">Aixi Zhang, Yue Liao, Si Liu, etc.</p>
+                <p class="pub-venue">NeurIPS 2021</p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2108.05077"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/YueLiao/CDN"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Progressive Language-Customized Visual Feature Learning for One-Stage Visual Grounding</h3>
+                <p class="pub-authors">Yue Liao, Aixi Zhang, Zhiyuan Chen, etc.</p>
+                <p class="pub-venue">IEEE TIP 2022</p>
+                <div class="pub-links">
+                    <a href="https://colalab.net/media/paper/Progressive_Language-Customized_Visual_Feature_Learning_for_One-Stage_Visual_Grounding.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Reformulating HOI Detection as Adaptive Set Prediction</h3>
+                <p class="pub-authors">Mingfei Chen, Yue Liao, Si Liu, etc.</p>
+                <p class="pub-venue">CVPR 2021</p>
+                <div class="pub-links">
+                    <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Chen_Reformulating_HOI_Detection_As_Adaptive_Set_Prediction_CVPR_2021_paper.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/yoyomimi/AS-Net"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Human-Centric Spatio-Temporal Video Grounding With Visual Transformers</h3>
+                <p class="pub-authors">Zongheng Tang, Yue Liao, Si Liu, etc.</p>
+                <p class="pub-venue">IEEE TCSVT 2021</p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2011.05049"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/tzhhhh123/HC-STVG"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Scene Graph Generation With Hierarchical Context</h3>
+                <p class="pub-authors">Guanghui Ren, Lejian Ren, Yue Liao, etc.</p>
+                <p class="pub-venue">IEEE TNNLS 2021</p>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1109/TNNLS.2020.2979270"><i class="fas fa-file-pdf"></i> Paper</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Cross-Modal Omni Interaction Modeling for Phrase Grounding</h3>
+                <p class="pub-authors">Tianyu Yu, Tianrui Hui, Yue Liao, etc.</p>
+                <p class="pub-venue">ACM MM 2020</p>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1145/3394171.3413846"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/yiranyyu/Phrase-Grounding"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">Local Correlation Consistency for Knowledge Distillation</h3>
+                <p class="pub-authors">Xiaojie Li, Jianlong Wu, Yue Liao, etc.</p>
+                <p class="pub-venue">ECCV 2020</p>
+                <div class="pub-links">
+                    <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123570018.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">PPDM: Parallel Point Detection and Matching for Real-time Human-Object Interaction Detection</h3>
+                <p class="pub-authors">Yue Liao, Si Liu, Fei Wang, etc.</p>
+                <p class="pub-venue">CVPR 2020</p>
+                <div class="pub-links">
+                    <a href="http://openaccess.thecvf.com/content_CVPR_2020/papers/Liao_PPDM_Parallel_Point_Detection_and_Matching_for_Real-Time_Human-Object_Interaction_CVPR_2020_paper.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/YueLiao/PPDM"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">A Real-Time Cross-modality Correlation Filtering Method for Referring Expression Comprehension</h3>
+                <p class="pub-authors">Yue Liao, Si Liu, Guanbin Li, etc.</p>
+                <p class="pub-venue">CVPR 2020</p>
+                <div class="pub-links">
+                    <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Liao_A_Real-Time_Cross-Modality_Correlation_Filtering_Method_for_Referring_Expression_Comprehension_CVPR_2020_paper.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">CentripetalNet: Pursuing High-quality Keypoint Pairs for Object Detection</h3>
+                <p class="pub-authors">Zhiwei Dong, Guoxuan Li, Yue Liao, etc.</p>
+                <p class="pub-venue">CVPR 2020</p>
+                <div class="pub-links">
+                    <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Dong_CentripetalNet_Pursuing_High-Quality_Keypoint_Pairs_for_Object_Detection_CVPR_2020_paper.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/KiveeDong/CentripetalNet"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3 class="pub-title">GPS: Group People Segmentation with Detailed Part Inference</h3>
+                <p class="pub-authors">Yue Liao, Si Liu, Tianrui Hui, etc.</p>
+                <p class="pub-venue">ICME 2019</p>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1109/ICME.2019.00112"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
             </div>
         </section>
-        <section class="publications-section">
-            <div class="section-title">Publications</div>
-            <div class="publications-items">
-                <div class="publication-item">
-                    <div class="publication-title">LLaVA-MoD: Making LLaVA Tiny via MoE Knowledge Distillation</div>
-                    <div class="publication-authors">
-                        Fangxun Shu*, Yue Liao*, Le Zhuo, Chenning Xu, Lei Zhang, Guanghao Zhang, etc.
-                    </div>
-                    <div class="publication-conference">ICLR 2025</div>
-                    <div class="publication-actions">
-                        <a href="https://arxiv.org/abs/2408.15881">[Paper]</a>
-                        <a href="https://github.com/shufangxun/LLaVA-MoD">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">MC-MoE: Mixture Compressor for Mixture-of-Experts LLMs Gains More</div>
-                    <div class="publication-authors">
-                        Wei Huang*, Yue Liao*, Jianhui Liu, Ruifei He, Haoru Tan, Shiming Zhang, Hongsheng Li, Si Liu, Xiaojuan Qi
-                    </div>
-                    <div class="publication-conference">ICLR 2025</div>
-                    <div class="publication-actions">
-                        <a href="https://arxiv.org/abs/2410.06270">[Paper]</a>
-                        <a href="https://github.com/Aaronhuang-778/Mixture-Compressor-MoE">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Towards Realistic UAV Vision-Language Navigation: Platform, Benchmark, and Methodology</div>
-                    <div class="publication-authors">
-                        Xiangyu Wang, Donglin Yang, Ziqin Wang, Hohin Kwan, Jinyu Chen, Wenjun Wu, Hongsheng Li, Yue Liao#, Si Liu
-                    </div>
-                    <div class="publication-conference">ICLR 2025</div>
-                    <div class="publication-actions">
-                        <a href="https://arxiv.org/abs/2410.07087">[Paper]</a>
-                        <a href="https://prince687028.github.io/OpenUAV">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Anchor3DLane++: 3D Lane Detection via Sample-Adaptive Sparse 3D Anchor Regression</div>
-                    <div class="publication-authors">
-                        Shaofei Huang, Zhenwei Shen, Zehao Huang, Yue Liao, Jizhong Han, Naiyan Wang, Si Liu
-                    </div>
-                    <div class="publication-conference">IEEE TPAMI 2025</div>
-                    <div class="publication-actions">
-                        <a href="https://arxiv.org/pdf/2412.16889">[Paper]</a>
-                        <a href="https://github.com/tusen-ai/Anchor3DLane">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">LaMI-DETR: Open-Vocabulary Detection with Language Model Instruction</div>
-                    <div class="publication-authors">
-                        Penghui Du, Yu Wang, Yifan Sun, Luting Wang, Yue Liao, Gang Zhang, Errui Ding, Yan Wang, Jingdong Wang, Si Liu
-                    </div>
-                    <div class="publication-conference">ECCV 2024</div>
-                    <div class="publication-actions">
-                        <a href="https://arxiv.org/pdf/2407.11335">[Paper]</a>
-                        <a href="https://github.com/eternaldolphin/LaMI-DETR">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Mask-Enhanced Segment Anything Model for Tumor Lesion Semantic Segmentation</div>
-                    <div class="publication-authors">
-                        Hairong Shi, Songhao Han, Shaofei Huang, Yue Liao, Guanbin Li, Xiangxing Kong, Hua Zhu, Xiaomu Wang, Si Liu
-                    </div>
-                    <div class="publication-conference">MICCAI 2024</div>
-                    <div class="publication-actions">
-                        <a href="https://doi.org/10.1007/978-3-031-72111-3_38">[Paper]</a>
-                        <a href="https://github.com/nanase1025/M-SAM">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">PPDM++: Parallel Point Detection and Matching for Fast and Accurate HOI Detection</div>
-                    <div class="publication-authors">
-                        Yue Liao, Si Liu, Yulu Gao, Aixi Zhang, Zhimin Li, Fei Wang, Bo Li
-                    </div>
-                    <div class="publication-conference">IEEE TPAMI 2024</div>
-                    <div class="publication-actions">
-                        <a href="https://colalab.net/media/paper/PAMI_PPDM_final.pdf">[Paper]</a>
-                        <a href="https://github.com/YueLiao/PPDM">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">MAC: Masked Contrastive Pre-Training for Efficient Video-Text Retrieval</div>
-                    <div class="publication-authors">
-                        Fangxun Shu, Biaolong Chen, Yue Liao#, Jinqiao Wang, Si Liu
-                    </div>
-                    <div class="publication-conference">IEEE TMM 2024</div>
-                    <div class="publication-actions">
-                        <a href="https://arxiv.org/pdf/2212.00986">[Paper]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">DiffDance: Cascaded Human Motion Diffusion Model for Dance Generation</div>
-                    <div class="publication-authors">
-                        Qiaosong Qi, Le Zhuo, Aixi Zhang, Yue Liao, Fei Fang, Si Liu, Shuicheng Yan
-                    </div>
-                    <div class="publication-conference">ACM MM 2023</div>
-                    <div class="publication-actions">
-                        <a href="https://arxiv.org/pdf/2308.02915">[Paper]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Video Background Music Generation: Dataset, Method and Evaluation</div>
-                    <div class="publication-authors">
-                        Le Zhuo, Zhaokai Wang, Baisen Wang, Yue Liao#, Chenxi Bao, Stanley Peng, Songhao Han, Aixi Zhang, Fei Fang, Si Liu
-                    </div>
-                    <div class="publication-conference">ICCV 2023</div>
-                    <div class="publication-actions">
-                        <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Zhuo_Video_Background_Music_Generation_Dataset_Method_and_Evaluation_ICCV_2023_paper.pdf">[Paper]</a>
-                        <a href="https://github.com/zhuole1025/SymMV">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Object-Aware Distillation Pyramid for Open-Vocabulary Object Detection</div>
-                    <div class="publication-authors">
-                        Luting Wang, Yi Liu, Penghui Du, Zihan Ding, Yue Liao#, Qiaosong Qi, Biaolong Chen, Si Liu
-                    </div>
-                    <div class="publication-conference">CVPR 2023</div>
-                    <div class="publication-actions">
-                        <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Object-Aware_Distillation_Pyramid_for_Open-Vocabulary_Object_Detection_CVPR_2023_paper.pdf">[Paper]</a>
-                        <a href="https://github.com/LutingWang/OADP">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Simultaneously Training and Compressing Vision-and-Language Pre-Training Model</div>
-                    <div class="publication-authors">
-                        Qiaosong Qi, Aixi Zhang, Yue Liao#, Wenyu Sun, Yongliang Wang, Xiaobo Li, Si Liu
-                    </div>
-                    <div class="publication-conference">IEEE TMM 2023</div>
-                    <div class="publication-actions">
-                        <a href="https://doi.org/10.1109/TMM.2022.3233258">[Paper]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">HEAD: Hetero-Assists Distillation for Heterogeneous Object Detectors</div>
-                    <div class="publication-authors">
-                        Luting Wang, Xiaojie Li, Yue Liao#, Zeren Jiang, Jianlong Wu, Fei Wang, Chen Qian, Si Liu
-                    </div>
-                    <div class="publication-conference">ECCV 2022</div>
-                    <div class="publication-actions">
-                        <a href="https://arxiv.org/pdf/2207.05345">[Paper]</a>
-                        <a href="https://github.com/LutingWang/HEAD">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">GEN-VLKT: Simplify Association and Enhance Interaction Understanding for HOI Detection</div>
-                    <div class="publication-authors">
-                        Yue Liao, Aixi Zhang, Miao Lu, Yongliang Wang, Xiaobo Li, Si Liu
-                    </div>
-                    <div class="publication-conference">CVPR 2022</div>
-                    <div class="publication-actions">
-                        <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Liao_GEN-VLKT_Simplify_Association_and_Enhance_Interaction_Understanding_for_HOI_Detection_CVPR_2022_paper.pdf">[Paper]</a>
-                        <a href="https://github.com/YueLiao/gen-vlkt">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Human-Centric Relation Segmentation: Dataset and Solution</div>
-                    <div class="publication-authors">
-                        Si Liu, Zitian Wang, Yulu Gao, Lejian Ren, Yue Liao, Guanghui Ren, Bo Li, Shuicheng Yan
-                    </div>
-                    <div class="publication-conference">IEEE TPAMI 2022</div>
-                    <div class="publication-actions">
-                        <a href="https://colalab.net/media/paper/Human-centric_Relation_Segmentation_Dataset_and_Solution_jBmLebt.pdf">[Paper]</a>
-                        <a href="https://intxyz-my.sharepoint.com/:f:/g/personal/zongheng_picdataset_com/Eqmkhfe9qHxHoFCoXxAxYpYBe6aiztxvPQXuj3j9DWkkrg?e=9LGt5s">[Dataset]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Mining the Benefits of Two-stage and One-stage HOI Detection</div>
-                    <div class="publication-authors">
-                        Aixi Zhang*, Yue Liao*, Si Liu, Miao Lu, Yongliang Wang, Chen Gao, Xiaobo Li
-                    </div>
-                    <div class="publication-conference">NeurIPS 2021</div>
-                    <div class="publication-actions">
-                        <a href="https://arxiv.org/pdf/2108.05077">[Paper]</a>
-                        <a href="https://github.com/YueLiao/CDN">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Progressive Language-Customized Visual Feature Learning for One-Stage Visual Grounding</div>
-                    <div class="publication-authors">
-                        Yue Liao, Aixi Zhang, Zhiyuan Chen, Tianrui Hui, Si Liu
-                    </div>
-                    <div class="publication-conference">IEEE TIP 2022</div>
-                    <div class="publication-actions">
-                        <a href="https://colalab.net/media/paper/Progressive_Language-Customized_Visual_Feature_Learning_for_One-Stage_Visual_Grounding.pdf">[Paper]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Reformulating HOI Detection as Adaptive Set Prediction</div>
-                    <div class="publication-authors">
-                        Mingfei Chen*, Yue Liao*, Si Liu, Zhiyuan Chen, Fei Wang, Chen Qian
-                    </div>
-                    <div class="publication-conference">CVPR 2021</div>
-                    <div class="publication-actions">
-                        <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Chen_Reformulating_HOI_Detection_As_Adaptive_Set_Prediction_CVPR_2021_paper.pdf">[Paper]</a>
-                        <a href="https://github.com/yoyomimi/AS-Net">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Human-Centric Spatio-Temporal Video Grounding With Visual Transformers</div>
-                    <div class="publication-authors">
-                        Zongheng Tang, Yue Liao, Si Liu, Guanbin Li, Xiaojie Jin, Hongxu Jiang, Qian Yu, Dong Xu
-                    </div>
-                    <div class="publication-conference">IEEE TCSVT 2021</div>
-                    <div class="publication-actions">
-                        <a href="https://arxiv.org/pdf/2011.05049">[Paper]</a>
-                        <a href="https://github.com/tzhhhh123/HC-STVG">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Scene Graph Generation With Hierarchical Context</div>
-                    <div class="publication-authors">
-                        Guanghui Ren, Lejian Ren, Yue Liao, Si Liu, Bo Li, Jizhong Han, Shuicheng Yan
-                    </div>
-                    <div class="publication-conference">IEEE TNNLS 2021</div>
-                    <div class="publication-actions">
-                        <a href="https://doi.org/10.1109/TNNLS.2020.2979270">[Paper]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Cross-Modal Omni Interaction Modeling for Phrase Grounding</div>
-                    <div class="publication-authors">
-                        Tianyu Yu, Tianrui Hui, Zhihao Yu, Yue Liao, Sansi Yu, Faxi Zhang, Si Liu
-                    </div>
-                    <div class="publication-conference">ACM MM 2020</div>
-                    <div class="publication-actions">
-                        <a href="https://doi.org/10.1145/3394171.3413846">[Paper]</a>
-                        <a href="https://github.com/yiranyyu/Phrase-Grounding">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Local Correlation Consistency for Knowledge Distillation</div>
-                    <div class="publication-authors">
-                        Xiaojie Li, Jianlong Wu, Hongyu Fang, Yue Liao, Fei Wang, Chen Qian
-                    </div>
-                    <div class="publication-conference">ECCV 2020</div>
-                    <div class="publication-actions">
-                        <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123570018.pdf">[Paper]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">PPDM: Parallel Point Detection and Matching for Real-time Human-Object Interaction Detection</div>
-                    <div class="publication-authors">
-                        Yue Liao, Si Liu, Fei Wang, Yanjie Chen, Chen Qian, Jiashi Feng
-                    </div>
-                    <div class="publication-conference">CVPR 2020</div>
-                    <div class="publication-actions">
-                        <a href="http://openaccess.thecvf.com/content_CVPR_2020/papers/Liao_PPDM_Parallel_Point_Detection_and_Matching_for_Real-Time_Human-Object_Interaction_CVPR_2020_paper.pdf">[Paper]</a>
-                        <a href="https://github.com/YueLiao/PPDM">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">A Real-Time Cross-modality Correlation Filtering Method for Referring Expression Comprehension</div>
-                    <div class="publication-authors">
-                        Yue Liao, Si Liu, Guanbin Li, Fei Wang, Yanjie Chen, Chen Qian, Bo Li
-                    </div>
-                    <div class="publication-conference">CVPR 2020</div>
-                    <div class="publication-actions">
-                        <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Liao_A_Real-Time_Cross-Modality_Correlation_Filtering_Method_for_Referring_Expression_Comprehension_CVPR_2020_paper.pdf">[Paper]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">CentripetalNet: Pursuing High-quality Keypoint Pairs for Object Detection</div>
-                    <div class="publication-authors">
-                        Zhiwei Dong, Guoxuan Li, Yue Liao, Fei Wang, Pengju Ren, Chen Qian
-                    </div>
-                    <div class="publication-conference">CVPR 2020</div>
-                    <div class="publication-actions">
-                        <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Dong_CentripetalNet_Pursuing_High-Quality_Keypoint_Pairs_for_Object_Detection_CVPR_2020_paper.pdf">[Paper]</a>
-                        <a href="https://github.com/KiveeDong/CentripetalNet">[Code]</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">GPS: Group People Segmentation with Detailed Part Inference</div>
-                    <div class="publication-authors">
-                        Yue Liao, Si Liu, Tianrui Hui, Chen Gao, Yao Sun, Hefei Ling, Bo Li
-                    </div>
-                    <div class="publication-conference">ICME 2019</div>
-                    <div class="publication-actions">
-                        <a href="https://doi.org/10.1109/ICME.2019.00112">[Paper]</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="services-section">
-            <div class="section-title">Academic Services</div>
-            <ul>
-                <li>Workshop Organizers: 'Person in Context (PIC)' workshops in  ECCV 2018, ICCV 2019, and CVPR 2021</li>
-                <li>Conference Reviewers: CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR, AAAI, IJCAI, ACM MM </li>
-                <li>Journal Reviewers: TPAMI, TIP, TMM, TNNLS, TCSTV, ACM CSUR</li>
+
+        <section class="section">
+            <h2 class="section-heading">Academic Services</h2>
+            <ul class="list">
+                <li>Workshop Organizer: Person in Context (PIC) workshops at ECCV 2018, ICCV 2019, CVPR 2021</li>
+                <li>Conference Reviewer: CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR</li>
+                <li>Journal Reviewer: TPAMI, TIP, TMM, TNNLS</li>
             </ul>
         </section>
-        <section class="awards-section">
-            <div class="section-title">Awards</div>
-            <ul>
-                <li>The First Prize of the Natural Science Award of the China Society for Image and Graphics (CSIG) 2023</li>
-                <li>The Huawei Scholarship of Beihang University 2023</li>
-                <li>National Scholarship 2022</li>
-                <li>Alibaba 'Outstanding Academic Cooperation and Research Intern' Award 2022</li>
-                <li>The Champion of ActivityNet Homage challenge (CVPR) 2021</li>
-                <li>Sensetime Co., Ltd. 'Future Star' Award 2020</li>
+
+        <section class="section">
+            <h2 class="section-heading">Awards</h2>
+            <ul class="list">
+                <li>The First Prize of Natural Science Award (CSIG) - 2023</li>
+                <li>Huawei Scholarship of Beihang University - 2023</li>
+                <li>National Scholarship - 2022</li>
+                <li>Alibaba Outstanding Intern Award - 2022</li>
+                <li>CVPR 2021 ActivityNet Homage Challenge 1st Place - 2021</li>
+                <li>Sensetime "Future Star" Award - 2020</li>
             </ul>
         </section>
-        <section class="interests-section">
-            <div class="section-title">Personal Interests</div>
-            <p>I avidly pursue sports, particularly tennis, basketball, and hiking, with a special admiration for iconic figures like Roger Federer and Kobe Bryant. Traveling is another passion of mine, as it broadens my horizons and deepens my understanding of diverse cultures and lifestyles.</p>
+
+        <section class="section">
+            <h2 class="section-heading">Personal Interests</h2>
+            <p>Sports (Tennis, Basketball, Hiking), Travel</p>
         </section>
     </div>
 </body>
